@@ -4,151 +4,78 @@
 <meta charset="UTF-8">
 <title>Miracle Fest 2026</title>
 <style>
-/* ===== Base Styles ===== */
-body {
-margin: 0;
-font-family: Arial, sans-serif;
-background: linear-gradient(to right, #111, #00002b);
-color: white;
-overflow-x: hidden;
-}
-a { color: gold; text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-/* ===== Header ===== */
-header {
-text-align: center;
-padding: 30px 10px;
-background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5yJMcS-xfstSjInN89VdetSPR15_P6UN7BFsXiY3FFA&s=10");
-opacity: 0.5;
-background-position: center;
-background-size: cover;
-background-attachment: fixed;
-border-bottom: 3px solid gold;
-animation: fadeInDown 1s ease forwards;
-}
-header h1 { font-size: 48px; margin: 0; color: gold; }
-header h2 { margin: 5px 0; font-weight: normal; }
-
-/* ===== Sections ===== */
-.section {
-padding: 20px 40px;
-border-bottom: 1px solid #444;
-animation: fadeIn 1s ease forwards;
-}
-.section h2 {
-color: gold;
-border-left: 5px solid gold;
-padding-left: 10px;
-margin-bottom: 15px;
+body { margin:0; font-family: Arial, sans-serif; background: linear-gradient(to right, #111, #2b0000); color:white; }
+header { text-align:center; padding:30px 10px; background:black; border-bottom:3px solid gold; }
+header h1 { font-size:48px; margin:0; color:gold; }
+header h2 { margin:5px 0; font-weight:normal; }
+.section { padding:20px 40px; border-bottom:1px solid #444; }
+.section h2 { color:gold; border-left:5px solid gold; padding-left:10px; }
+ul { line-height:1.8; }
+.event-box { background:rgba(255,255,255,0.05); padding:15px; margin:15px 0; border-left:4px solid gold; display:flex; justify-content:space-between; align-items:center; gap:20px; }
+.event-details { flex:1; }
+.qr-link { text-align:center; text-decoration:none; }
+.qr-box { width:95px; height:95px; background:white; padding:6px; display:flex; align-items:center; justify-content:center; border-radius:6px; }
+.qr-box svg { width:100%; height:100%; }
+.qr-text { margin-top:6px; font-size:12px; color:gold; }
+footer { background:black; text-align:center; padding:20px; font-size:14px; border-top:3px solid gold; }
+.hero-image {
+  width: 100%;
+  max-height: 420px;
+  overflow: hidden;
 }
 
-/* ===== Event Boxes ===== */
-.event-box {
-background: rgba(0, 255, 255, 0.05);
-padding: 15px;
-margin: 15px 0;
-border-left: 4px solid gold;
-display: flex;
-justify-content: space-between;
-align-items: center;
-gap: 20px;
-transition: transform 0.3s, background 0.3s;
-opacity: 0;
-animation: fadeInUp 1s forwards;
-}
-.event-box:hover {
-transform: translateY(-5px);
-background: rgba(0, 255, 255, 0.1);
-}
-.event-details { flex: 1; }
-.event-details h3 { margin: 0 0 8px; }
-ul { margin: 0; padding-left: 20px; line-height: 1.8; }
-
-/* ===== QR Box ===== */
-.qr-link { text-align: center; text-decoration: none; }
-.qr-box {
-width: 95px;
-height: 95px;
-background: white;
-padding: 6px;
-display: flex;
-align-items: center;
-justify-content: center;
-border-radius: 8px;
-transition: transform 0.3s;
-}
-.qr-box:hover {
-transform: scale(1.1) rotate(5deg);
-}
-.qr-box svg { width: 100%; height: 100%; }
-.qr-text { margin-top: 6px; font-size: 12px; color: gold; }
-
-/* ===== Footer ===== */
-footer {
-background: black;
-text-align: center;
-padding: 30px 10px;
-font-size: 14px;
-border-top: 3px solid gold;
-animation: fadeInUp 1s ease forwards;
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-/* ===== Animations ===== */
-@keyframes fadeInDown {
-0% { opacity: 0; transform: translateY(-50px); }
-100% { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeInUp {
-0% { opacity: 0; transform: translateY(50px); }
-100% { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-0% { opacity: 0; }
-100% { opacity: 1; }
+.divider {
+  height: 4px;
+  background: gold;
+  margin: 0;
 }
 
-/* ===== Stagger animation delays ===== */
-.event-box:nth-child(1) { animation-delay: 0.2s; }
-.event-box:nth-child(2) { animation-delay: 0.4s; }
-.event-box:nth-child(3) { animation-delay: 0.6s; }
-.event-box:nth-child(4) { animation-delay: 0.8s; }
-.event-box:nth-child(5) { animation-delay: 1s; }
-.event-box:nth-child(6) { animation-delay: 1.2s; }
-.event-box:nth-child(7) { animation-delay: 1.4s; }
-.event-box:nth-child(8) { animation-delay: 1.6s; }
-.event-box:nth-child(9) { animation-delay: 1.8s; }
-.event-box:nth-child(10) { animation-delay: 2s; }
-.event-box:nth-child(11) { animation-delay: 2.2s; }
-.event-box:nth-child(12) { animation-delay: 2.4s; }
-.event-box:nth-child(13) { animation-delay: 2.6s; }
-.event-box:nth-child(14) { animation-delay: 2.8s; }
-.event-box:nth-child(15) { animation-delay: 3s; }
-.event-box:nth-child(16) { animation-delay: 3.2s; }
-.event-box:nth-child(17) { animation-delay: 3.4s; }
-.event-box:nth-child(18) { animation-delay: 3.6s; }
-.event-box:nth-child(19) { animation-delay: 3.8s; }
-.event-box:nth-child(20) { animation-delay: 4s; }
-.event-box:nth-child(21) { animation-delay: 4.2s; }
-.event-box:nth-child(22) { animation-delay: 4.4s; }
-.event-box:nth-child(23) { animation-delay: 4.6s; }
-.event-box:nth-child(24) { animation-delay: 4.8s; }
+.registration-title {
+  text-align: center;
+  padding: 20px 10px;
+  background: #111;
+}
 
+.registration-title h2 {
+  margin: 0;
+  color: gold;
+  font-size: 32px;
+  letter-spacing: 2px;
+}
 </style>
 </head>
 <body>
-
 <header>
 <h1>MIRACLE 2026</h1>
-<h2><b>National Level Inter Collegiate Cultural Fest</b></h2>
-<p>Season 13 | Feb 13 | AJK College of Arts and Science</p>
+<h2>National Level Inter Collegiate Cultural Fest</h2>
+<p>Season 13 | Feb 12 & 13 | AJK College of Arts and Science</p>
 <p>Prizes Worth ₹2 Lakh</p>
-<p>Click here to <a href="https://drive.google.com/file/d/1EbF6ldrT98iYW03mxIJQ-Xy1Al0CVf1v/view?usp=drivesdk">download brochure</a> for more details</p>
+<p>Click here to <a href="https://drive.google.com/file/d/1EbF6ldrT98iYW03mxIJQ-Xy1Al0CVf1v/view?usp=drivesdk">download</a> broucher for more details
+</p>
 </header>
+<!-- HERO IMAGE -->
+<div class="hero-image">
+  <img src="https://i.ibb.co/SD2RNb9L/IMG-0697.jpg" alt="Miracle Fest Banner">
+</div>
 
-<!-- ===== ON STAGE ===== -->
+<!-- YELLOW DIVIDER -->
+<div class="divider"></div>
+
+<!-- REGISTRATION TITLE -->
+<div class="registration-title">
+  <h2>REGISTRATION</h2>
+</div>
+
+<!-- ON STAGE -->
 <div class="section">
-<h2>On Stage Events (Registration ₹150) (13.02.2026)</h2>
+<h2>On Stage Events (Registration ₹150)</h2>
 
 <div class="event-box">
 <div class="event-details">
@@ -156,205 +83,53 @@ animation: fadeInUp 1s ease forwards;
 <ul><li>Individual participation</li><li>Music played on the spot</li><li>Time: 5 minutes</li></ul>
 </div>
 <a class="qr-link" href="https://docs.google.com/forms/d/1JXJ_H9zahw8RZ7hnVsoX4Kctkh8YbFV2i3N-7S22-vk/viewform?edit_requested=true" target="_blank">
-<div class="qr-box"><svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg></div>
+<div class="qr-box">
+<svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg>
+</div>
 <div class="qr-text">Touch to Enroll</div>
 </a>
 </div>
 
-<div class="event-box">
-<div class="event-details">
-<h3>Nritya Thalam (Classical Dance)</h3>
-<ul><li>Bring music in pendrive & upload on event day</li><li>Carry costumes & accessories</li><li>Time: 5 minutes</li></ul>
-</div>
-<a class="qr-link" href="https://docs.google.com/forms/d/1JXJ_H9zahw8RZ7hnVsoX4Kctkh8YbFV2i3N-7S22-vk/viewform?edit_requested=true" target="_blank">
-<div class="qr-box"><svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg></div>
-<div class="qr-text">Touch to Enroll</div>
-</a>
+<div class="event-box"><div class="event-details"><h3>Nritya Thalam (Classical Dance)</h3><ul><li>Bring music in pendrive & upload on event day</li><li>Carry costumes & accessories</li><li>Time: 5 minutes</li></ul></div><a class="qr-link" href="https://docs.google.com/forms/d/1JXJ_H9zahw8RZ7hnVsoX4Kctkh8YbFV2i3N-7S22-vk/viewform?edit_requested=true" target="_blank"><div class="qr-box"><svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg></div><div class="qr-text">Touch to Enroll</div></a></div>
+
+<div class="event-box"><div class="event-details"><h3>Trendy Tango (Fashion Show)</h3><ul><li>Open theme</li><li>Max 9 participants per institution</li><li>No rented/ready-made garments</li><li>Time: 10 minutes</li></ul></div><a class="qr-link" href="https://docs.google.com/forms/d/1JXJ_H9zahw8RZ7hnVsoX4Kctkh8YbFV2i3N-7S22-vk/viewform?edit_requested=true" target="_blank"><div class="qr-box"><svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg></div><div class="qr-text">Touch to Enroll</div></a></div>
+
+<div class="event-box"><div class="event-details"><h3>Swar & Beat (Solo Song)</h3><ul><li>Karaoke tracks allowed</li><li>No lyrics reference while singing</li><li>Time: 5 minutes</li></ul></div><a class="qr-link" href="https://docs.google.com/forms/d/1JXJ_H9zahw8RZ7hnVsoX4Kctkh8YbFV2i3N-7S22-vk/viewform?edit_requested=true" target="_blank"><div class="qr-box"><svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg></div><div class="qr-text">Touch to Enroll</div></a></div>
+
+<div class="event-box"><div class="event-details"><h3>Jugalbandi (Music Band)</h3><ul><li>Max 6 members</li><li>Bring own instruments</li><li>Time: 10 minutes</li></ul></div><a class="qr-link" href="https://docs.google.com/forms/d/1JXJ_H9zahw8RZ7hnVsoX4Kctkh8YbFV2i3N-7S22-vk/viewform?edit_requested=true" target="_blank"><div class="qr-box"><svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg></div><div class="qr-text">Touch to Enroll</div></a></div>
+
+<div class="event-box"><div class="event-details"><h3>Group Dance</h3><ul><li>Max 8 participants per institution</li><li>Bring music in pendrive & upload on event day</li><li>Time: 7 minutes</li></ul></div><a class="qr-link" href="https://docs.google.com/forms/d/1JXJ_H9zahw8RZ7hnVsoX4Kctkh8YbFV2i3N-7S22-vk/viewform?edit_requested=true" target="_blank"><div class="qr-box"><svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg></div><div class="qr-text">Touch to Enroll</div></a></div>
 </div>
 
-<div class="event-box">
-<div class="event-details">
-<h3>Trendy Tango (Fashion Show)</h3>
-<ul><li>Open theme</li><li>Max 9 participants per institution</li><li>No rented/ready-made garments</li><li>Time: 10 minutes</li></ul>
-</div>
-<a class="qr-link" href="https://docs.google.com/forms/d/1JXJ_H9zahw8RZ7hnVsoX4Kctkh8YbFV2i3N-7S22-vk/viewform?edit_requested=true" target="_blank">
-<div class="qr-box"><svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg></div>
-<div class="qr-text">Touch to Enroll</div>
-</a>
-</div>
-
-<div class="event-box">
-<div class="event-details">
-<h3>Swar & Beat (Solo Song)</h3>
-<ul><li>Karaoke tracks allowed</li><li>No lyrics reference while singing</li><li>Time: 5 minutes</li></ul>
-</div>
-<a class="qr-link" href="https://docs.google.com/forms/d/1JXJ_H9zahw8RZ7hnVsoX4Kctkh8YbFV2i3N-7S22-vk/viewform?edit_requested=true" target="_blank">
-<div class="qr-box"><svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg></div>
-<div class="qr-text">Touch to Enroll</div>
-</a>
-</div>
-
-<div class="event-box">
-<div class="event-details">
-<h3>Jugalbandi (Music Band)</h3>
-<ul><li>Max 6 members</li><li>Bring own instruments</li><li>Time: 10 minutes</li></ul>
-</div>
-<a class="qr-link" href="https://docs.google.com/forms/d/1JXJ_H9zahw8RZ7hnVsoX4Kctkh8YbFV2i3N-7S22-vk/viewform?edit_requested=true" target="_blank">
-<div class="qr-box"><svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg></div>
-<div class="qr-text">Touch to Enroll</div>
-</a>
-</div>
-
-<div class="event-box">
-<div class="event-details">
-<h3>Group Dance</h3>
-<ul><li>Max 8 participants per institution</li><li>Bring music in pendrive & upload on event day</li><li>Time: 7 minutes</li></ul>
-</div>
-<a class="qr-link" href="https://docs.google.com/forms/d/1JXJ_H9zahw8RZ7hnVsoX4Kctkh8YbFV2i3N-7S22-vk/viewform?edit_requested=true" target="_blank">
-<div class="qr-box"><svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg></div>
-<div class="qr-text">Touch to Enroll</div>
-</a>
-</div>
-
-<!-- ===== OFF STAGE ===== -->
+<!-- OFF STAGE -->
 <div class="section">
-<h2>Off Stage Events (13.02.2026)</h2>
+<h2>Off Stage Events</h2>
 
-<div class="event-box">
-<div class="event-details">
-<h3>Star Biryani (Biryani Making)</h3>
-<ul><li>2 participants per team</li><li>Time limit: 90 minutes</li><li>Bring own ingredients</li><li>Vessel and stove provided</li></ul>
-</div>
-<a class="qr-link" href="https://docs.google.com/forms/d/1HknlCWeFj9VhQk6Cr9-etVsXiETkGbkNCmveR96A-uI/edit" target="_blank">
-<div class="qr-box"><svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg></div>
-<div class="qr-text">Touch to Enroll</div>
-</a>
+<div class="event-box"><div class="event-details"><h3>Star Biryani (Biryani Making)</h3><ul><li>2 participants per team</li><li>Time limit: 90 minutes</li><li>Bring own ingredients</li><li>Vessel and stove provided</li></ul></div><a class="qr-link" href="https://docs.google.com/forms/d/1HknlCWeFj9VhQk6Cr9-etVsXiETkGbkNCmveR96A-uI/edit" target="_blank"><div class="qr-box"><svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg></div><div class="qr-text">Touch to Enroll</div></a></div>
+
+<div class="event-box"><div class="event-details"><h3>Palm Tales (Mehndi)</h3><ul><li>Double hand</li><li>Max 2 participants</li><li>Bring own materials</li></ul></div><a class="qr-link" href="https://docs.google.com/forms/d/1HknlCWeFj9VhQk6Cr9-etVsXiETkGbkNCmveR96A-uI/edit" target="_blank"><div class="qr-box"><svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg></div><div class="qr-text">Touch to Enroll</div></a></div>
+
+<div class="event-box"><div class="event-details"><h3>Face Painting</h3><ul><li>Max 2 participants</li><li>Bring own materials</li><li>Time: 120 minutes</li></ul></div><a class="qr-link" href="https://docs.google.com/forms/d/1HknlCWeFj9VhQk6Cr9-etVsXiETkGbkNCmveR96A-uI/edit" target="_blank"><div class="qr-box"><svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg></div><div class="qr-text">Touch to Enroll</div></a></div>
+
+<div class="event-box"><div class="event-details"><h3>House of Sherlock</h3><ul><li>Max 2 participants per institution</li><li>3 rounds, each 30 minutes</li></ul></div><a class="qr-link" href="https://docs.google.com/forms/d/1HknlCWeFj9VhQk6Cr9-etVsXiETkGbkNCmveR96A-uI/edit" target="_blank"><div class="qr-box"><svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg></div><div class="qr-text">Touch to Enroll</div></a></div>
 </div>
 
-<div class="event-box">
-<div class="event-details">
-<h3>Palm Tales (Mehndi)</h3>
-<ul><li>Double hand</li><li>Max 2 participants</li><li>Bring own materials</li></ul>
-</div>
-<a class="qr-link" href="https://docs.google.com/forms/d/1HknlCWeFj9VhQk6Cr9-etVsXiETkGbkNCmveR96A-uI/edit" target="_blank">
-<div class="qr-box"><svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg></div>
-<div class="qr-text">Touch to Enroll</div>
-</a>
-</div>
-
-<div class="event-box">
-<div class="event-details">
-<h3>Face Painting</h3>
-<ul><li>Max 2 participants</li><li>Bring own materials</li><li>Time: 120 minutes</li></ul>
-</div>
-<a class="qr-link" href="https://docs.google.com/forms/d/1HknlCWeFj9VhQk6Cr9-etVsXiETkGbkNCmveR96A-uI/edit" target="_blank">
-<div class="qr-box"><svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg></div>
-<div class="qr-text">Touch to Enroll</div>
-</a>
-</div>
-
-<div class="event-box">
-<div class="event-details">
-<h3>House of Sherlock</h3>
-<ul><li>Max 2 participants per institution</li><li>3 rounds, each 30 minutes</li></ul>
-</div>
-<a class="qr-link" href="https://docs.google.com/forms/d/1HknlCWeFj9VhQk6Cr9-etVsXiETkGbkNCmveR96A-uI/edit" target="_blank">
-<div class="qr-box"><svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg></div>
-<div class="qr-text">Touch to Enroll</div>
-</a>
-</div>
-
-<!-- ===== SPORTS & EGAMES ===== -->
+<!-- SPORTS & EGAMES -->
 <div class="section">
-<h2>Sports Events (Registration ₹200) (13.02.2026)</h2>
+<h2>Sports Events (Registration ₹200)</h2>
 
-<div class="event-box">
-<div class="event-details">
-<h3>Rope Rumble (Tug of War)</h3>
-<ul><li>08 participants per team</li><li>The competition will be limited to the First 8 teams who register</li></ul>
-</div>
-<a class="qr-link" href="https://docs.google.com/forms/d/1J_5uQfPECiRs1qTPydbV5mqm9wmpfFeTJFCU-b_3IQA/edit" target="_blank">
-<div class="qr-box"><svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg></div>
-<div class="qr-text">Touch to Enroll</div>
-</a>
-</div>
+<div class="event-box"><div class="event-details"><h3>Rope Rumble (Tug of War)</h3><ul><li> 08 participants per team</li><li> The competition will be limited to the First 8 teams who register: </li></ul></div><a class="qr-link" href="https://docs.google.com/forms/d/1J_5uQfPECiRs1qTPydbV5mqm9wmpfFeTJFCU-b_3IQA/edit" target="_blank"><div class="qr-box"><svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg></div><div class="qr-text">Touch to Enroll</div></a></div>
 
-<div class="event-box">
-<div class="event-details">
-<h3>Iron Grip(arm wrestling)</h3>
-<ul><li>Weight categories: 50-60Kg, 60-70Kg, 70-80Kg, 80Kg+</li></ul>
-</div>
-<a class="qr-link" href="https://docs.google.com/forms/d/1ztgLDGywxJ_IgtgkOpXmN5FsE03cP_68g0ofBqaUDgc/edit" target="_blank">
-<div class="qr-box"><svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg></div>
-<div class="qr-text">Touch to Enroll</div>
-</a>
-</div>
+<div class="event-box"><div class="event-details"><h3>Iron Grip(arm wrestling)</h3><ul><li> Weight categories: 50-60Kg, 60-70Kg, 70-80Kg, 80Kg+</li></ul></div><a class="qr-link" href="https://docs.google.com/forms/d/1ztgLDGywxJ_IgtgkOpXmN5FsE03cP_68g0ofBqaUDgc/edit" target="_blank"><div class="qr-box"><svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg></div><div class="qr-text">Touch to Enroll</div></a></div>
 
-<div class="event-box">
-<div class="event-details">
-<h3>Freefire</h3>
-<ul><li>Maximum of 2 squads per institution</li><li>Winners selected by Team Death Match</li></ul>
-</div>
-<a class="qr-link" href="https://docs.google.com/forms/d/1ztgLDGywxJ_IgtgkOpXmN5FsE03cP_68g0ofBqaUDgc/edit" target="_blank">
-<div class="qr-box"><svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg></div>
-<div class="qr-text">Touch to Enroll</div>
-</a>
-</div>
+<div class="event-box"><div class="event-details"><h3>Freefire</h3><ul><li>Maximum of 2 squads per institution</li><li>Winners selected by Team Death Match</li></ul></div><a class="qr-link" href="https://docs.google.com/forms/d/1ztgLDGywxJ_IgtgkOpXmN5FsE03cP_68g0ofBqaUDgc/edit" target="_blank"><div class="qr-box"><svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg></div><div class="qr-text">Touch to Enroll</div></a></div>
 
-<div class="event-box">
-<div class="event-details">
-<h3>Chicken Dinner (PUBG)</h3>
-<ul><li>Maximum of 2 squads per institution</li><li>Winners selected by Team Death Match</li></ul>
-</div>
-<a class="qr-link" href="https://docs.google.com/forms/d/1ztgLDGywxJ_IgtgkOpXmN5FsE03cP_68g0ofBqaUDgc/edit" target="_blank">
-<div class="qr-box"><svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg></div>
-<div class="qr-text">Touch to Enroll</div>
-</a>
-</div>
-
+<div class="event-box"><div class="event-details"><h3>Chicken Dinner (PUBG)</h3><ul><li>Maximum of 2 squads per institution</li><li>Winners selected by Team Death Match</li></ul></div><a class="qr-link" href="https://docs.google.com/forms/d/1ztgLDGywxJ_IgtgkOpXmN5FsE03cP_68g0ofBqaUDgc/edit" target="_blank"><div class="qr-box"><svg viewBox="0 0 21 21"><rect width="21" height="21" fill="white"/><rect x="1" y="1" width="7" height="7" fill="black"/><rect x="13" y="1" width="7" height="7" fill="black"/><rect x="1" y="13" width="7" height="7" fill="black"/><rect x="9" y="9" width="3" height="3" fill="black"/></svg></div><div class="qr-text">Touch to Enroll</div></a></div>
 </div>
 
 <footer>
 <p>AJK College of Arts and Science, Coimbatore</p>
 <p>0422 - 3501700 | miracle2026@ajkcas.com</p>
-<p>Vist <a href="https://ajkcas.ac.in"> AJKCAS</a></p>
 </footer>
-
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
